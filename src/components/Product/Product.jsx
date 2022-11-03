@@ -10,6 +10,7 @@ const Product = (props) => {
   const handleShow = () => setShow(true);
 
   return (
+
     <>
       <Col className="product">
         <Card>
@@ -30,6 +31,7 @@ const Product = (props) => {
       </Col>
       <ModalComponent show={show} handleClose={handleClose} product={product} />
     </>
+
   );
 };
 

@@ -4,13 +4,16 @@ import TopMenu from "./components/TopMenu/TopMenu";
 import useAxios from "./hooks/useAxios";
 import { STORAGE_PRODUCTS_CART, urlApiProducts } from "./utils/constants";
 import { ToastContainer, toast } from "react-toastify";
+import { getProducts } from "./services/apiServices";
 
 function App() {
+
   const [productsCart, setProductsCart] = useState([]);
   const products = useAxios(urlApiProducts);
 
   useEffect(() => {
     getProductsCart();
+    getProductsFunction()
   }, []);
 
   const getProductsCart = () => {
@@ -32,6 +35,20 @@ function App() {
     toast.success(`${name} añadido al carrito correctamente`);
   };
 
+
+  const [products, setProducts] = useState([]);
+  const [productsStatic, setProductsStatic] = useState([]);
+
+  function getProductsFunction() {
+    getProducts()
+      .then((res) => {
+        // console.log(res);
+        setProducts(res.data);
+        setProductsStatic(res.data);
+      })
+      .catch((err) => console.log(err));
+  }
+
   return (
     <div>
       <TopMenu
@@ -39,7 +56,12 @@ function App() {
         productsCart={productsCart}
         getProductsCart={getProductsCart}
       />
-      <Products products={products} addProductCart={addProductCart} />
+      <Products
+        products={products}
+        productsStatic={productsStatic}
+        setProducts={setProducts}
+        addProductCart={addProductCart}
+      />
       <ToastContainer
         position="bottom-left"
         autoClose={5000}

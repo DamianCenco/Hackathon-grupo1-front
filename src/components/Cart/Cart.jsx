@@ -59,7 +59,7 @@ const Cart = (props) => {
 
   const calculateTotalPrice = () => {
     if (!products.loading || products.result) {
-      const total = products.result.data
+      const total = products
         .filter((product) => {
           return productsCart.includes(product.id.toString());
         })
@@ -70,6 +70,7 @@ const Cart = (props) => {
       return total;
     }
   };
+
   return (
     <>
       <Button onClick={openCart} variant="link" className="cart">
@@ -124,29 +125,26 @@ function CartContentHeader(props) {
 function CartContentProduct(props) {
   const {
     productId,
-    products: { loading, result },
+    products,
     productsCart,
     increaseQuantity,
     decreaseQuantity,
   } = props;
 
-  if (!loading && result) {
-    // eslint-disable-next-line
-    return result.data.map((product, index) => {
-      if (parseInt(productId) === product.id) {
-        const quantity = countDuplicatesItemArray(product.id, productsCart);
-        return (
-          <RenderProduct
-            key={index}
-            product={product}
-            quantity={quantity}
-            increaseQuantity={increaseQuantity}
-            decreaseQuantity={decreaseQuantity}
-          />
-        );
-      }
-    });
-  }
+  return products.map((product, index) => {
+    if (parseInt(productId) === product.id) {
+      const quantity = countDuplicatesItemArray(product.id, productsCart);
+      return (
+        <RenderProduct
+          key={index}
+          product={product}
+          quantity={quantity}
+          increaseQuantity={increaseQuantity}
+          decreaseQuantity={decreaseQuantity}
+        />
+      );
+    }
+  });
 }
 
 function RenderProduct(props) {
