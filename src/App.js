@@ -1,23 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Products from "./components/Products/Products";
+import TopMenu from "./components/TopMenu/TopMenu";
+import useAxios from "./hooks/useAxios";
+import { STORAGE_PRODUCTS_CART, urlApiProducts } from "./utils/constants";
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
+  const products = useAxios(urlApiProducts);
+  const [productsCart, setProductsCart] = useState([]);
+
+  useEffect(() => {
+    getProductsCart();
+  }, []);
+
+  const getProductsCart = () => {
+    const idsProducts = localStorage.getItem(STORAGE_PRODUCTS_CART);
+    if (idsProducts) {
+      const idsProductsSplit = idsProducts.split(",");
+      setProductsCart(idsProductsSplit);
+    } else {
+      setProductsCart([]);
+    }
+  };
+
+  const addProductCart = (id, name) => {
+    const idsProducts = productsCart;
+    idsProducts.push(id);
+    setProductsCart(idsProducts);
+    localStorage.setItem(STORAGE_PRODUCTS_CART, productsCart);
+    getProductsCart();
+    toast.success(`${name} añadido al carrito correctamente`);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <TopMenu
+        products={products}
+        productsCart={productsCart}
+        getProductsCart={getProductsCart}
+      />
+      <Products products={products} addProductCart={addProductCart} />
+      <ToastContainer
+        position="bottom-left"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop
+        closesOnClick
+        rtl={false}
+        pauseOnHover={false}
+        draggable
+      />
     </div>
   );
 }
