@@ -58,17 +58,15 @@ const Cart = (props) => {
   };
 
   const calculateTotalPrice = () => {
-    if (!products.loading || products.result) {
-      const total = products
-        .filter((product) => {
-          return productsCart.includes(product.id.toString());
-        })
-        .reduce((totalPrice, product) => {
-          const quantity = countDuplicatesItemArray(product.id, productsCart);
-          return totalPrice + product.price * quantity;
-        }, 0);
-      return total;
-    }
+    const total = products
+      .filter((product) => {
+        return productsCart.includes(product.id.toString());
+      })
+      .reduce((totalPrice, product) => {
+        const quantity = countDuplicatesItemArray(product.id, productsCart);
+        return totalPrice + product.precio * quantity;
+      }, 0);
+    return total;
   };
 
   return (
@@ -130,9 +128,10 @@ function CartContentProduct(props) {
     increaseQuantity,
     decreaseQuantity,
   } = props;
+  console.log(productId);
 
   return products.map((product, index) => {
-    if (parseInt(productId) === product.id) {
+    if (productId === product.id) {
       const quantity = countDuplicatesItemArray(product.id, productsCart);
       return (
         <RenderProduct
@@ -151,19 +150,23 @@ function RenderProduct(props) {
   const { product, quantity, increaseQuantity, decreaseQuantity } = props;
   return (
     <div className="cart-content__product">
-      <img src={`/${product.image}`} alt={product.name} />
+      <img src={product.imagen} alt={product.nombre} />
       <div className="cart-content__product-info">
         <div>
-          <h3>{product.name.substr(0, 25)}...</h3>
-          <p>{product.price.toFixed(2)} $/ud.</p>
+          <h3>{product.nombre.substr(0, 25)}...</h3>
+          <p>{product.precio.toFixed(2)} $/ud.</p>
         </div>
         <div>
           <p>{quantity} productos</p>
           <div>
-            <button onClick={() => decreaseQuantity(product.id, product.name)}>
+            <button
+              onClick={() => decreaseQuantity(product.id, product.nombre)}
+            >
               -
             </button>
-            <button onClick={() => increaseQuantity(product.id, product.name)}>
+            <button
+              onClick={() => increaseQuantity(product.id, product.nombre)}
+            >
               +
             </button>
           </div>

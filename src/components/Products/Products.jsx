@@ -14,6 +14,8 @@ const Products = ({
 }) => {
   const [searchWord, setSearchWord] = useState("");
 
+  console.log(productsStatic);
+
   useEffect(() => {
     filtrar();
   }, [searchWord]);
@@ -21,7 +23,7 @@ const Products = ({
   const filtrar = () => {
     let resultadosBusqueda = productsStatic.filter((elemento) => {
       if (
-        elemento.name
+        elemento.nombre
           .toString()
           .toLowerCase()
           .includes(searchWord.toLowerCase())
@@ -36,10 +38,7 @@ const Products = ({
     setSearchWord(target.value);
   };
 
-  console.log(loading);
-
   return (
-
     <Container className="product__container">
       <input
         type="text"
@@ -50,7 +49,6 @@ const Products = ({
       ></input>
       <Row>
         {!products.length ? (
-
           <Loading />
         ) : (
           products.map((product) => (

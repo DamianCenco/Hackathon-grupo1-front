@@ -3,12 +3,16 @@
   display: flex;
   justify-content: center;
 
-
   .card {
     margin: 19px;
     width: 250px;
     .card-title {
       height: 50px;
+    }
+
+    .card-img-top {
+      height: 250px;
+      object-fit: contain;
     }
 
     .btn {

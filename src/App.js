@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
 import Products from "./components/Products/Products";
 import TopMenu from "./components/TopMenu/TopMenu";
-import useAxios from "./hooks/useAxios";
 import { STORAGE_PRODUCTS_CART, urlApiProducts } from "./utils/constants";
 import { ToastContainer, toast } from "react-toastify";
 import { getProducts } from "./services/apiServices";
+//import productos from "./db/dbProducts.json";
 
 function App() {
-
   const [productsCart, setProductsCart] = useState([]);
-  const products = useAxios(urlApiProducts);
 
   useEffect(() => {
     getProductsCart();
-    getProductsFunction()
+    getProductsFunction();
   }, []);
 
   const getProductsCart = () => {
@@ -35,16 +33,14 @@ function App() {
     toast.success(`${name} añadido al carrito correctamente`);
   };
 
-
   const [products, setProducts] = useState([]);
   const [productsStatic, setProductsStatic] = useState([]);
 
   function getProductsFunction() {
     getProducts()
       .then((res) => {
-        // console.log(res);
-        setProducts(res.data);
-        setProductsStatic(res.data);
+        setProducts(res.data.data);
+        setProductsStatic(res.data.data);
       })
       .catch((err) => console.log(err));
   }

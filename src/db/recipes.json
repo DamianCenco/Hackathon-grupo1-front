@@ -1,0 +1,88 @@
+[
+    {
+        "id": "1",
+        "nombre": "Milanesa con Papas",
+        "ingredientes": [
+            {
+                "id_ingrediente": 1,
+                "cant": 1
+            },
+            {
+                "id_ingrediente": 2,
+                "cant": 2
+            },
+            {
+                "id_ingrediente": 3,
+                "cant": 1
+            },
+            {
+                "id_ingrediente": 4,
+                "cant": 4
+            }
+        ],
+        "imagen": ""
+    },
+    {
+        "id": "3",
+        "nombre": "PIZZA DE ATÚN CON PIMIENTO",
+        "keyword": "pizza tun",
+        "ingredientes": [
+            {
+                "id_ingrediente": 5,
+                "cant": 1
+            },
+            {
+                "id_ingrediente": 6,
+                "cant": 2
+            },
+            {
+                "id_ingrediente": 7,
+                "cant": 1
+            },
+            {
+                "id_ingrediente": 8,
+                "cant": 1
+            },
+            {
+                "id_ingrediente": 9,
+                "cant": 1
+            },
+            {
+                "id_ingrediente": 10,
+                "cant": 1
+            }
+        ],
+        "imagen": ""
+    },
+    {
+        "id":"3",
+        "nombre":"PAN DE CARNE",
+	    "keyword":"pan carne",
+        "ingredientes":[
+            {
+                "id_ingrediente":11,
+                "cant":2
+            },
+            {
+                "id_ingrediente":12,
+                "cant":1
+            },
+            {
+                "id_ingrediente":13,
+                "cant":1
+            },
+            {
+                "id_ingrediente":2,
+                "cant":2
+            }, {
+                "id_ingrediente":4,
+                "cant":1
+            },
+   		    {	
+                "id_ingrediente":16,
+                "cant":100
+            }
+        ],
+        "imagen":""
+    }
+]
