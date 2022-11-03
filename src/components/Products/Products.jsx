@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row } from "react-bootstrap";
 import Loading from "../Loading/Loading";
 import Product from "../Product/Product";
+import products from "../../db/dbProducts.json";
 import "./Products.scss";
 
 const Products = (props) => {
@@ -10,13 +11,15 @@ const Products = (props) => {
     addProductCart,
   } = props;
 
+  console.log(loading);
+
   return (
     <Container>
-      <Row>
-        {loading || !result ? (
+      <Row xl={6}>
+        {loading && !result ? (
           <Loading />
         ) : (
-          result.data.map((product) => (
+          products.map((product) => (
             <Product
               key={`product_${product.id}`}
               product={product}

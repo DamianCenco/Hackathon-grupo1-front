@@ -6,18 +6,17 @@ export default function useAxios(url, options) {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
   useEffect(() => {
-    (async () => {
+    const get = async () => {
       try {
         const res = await axios.get(url, options);
-        console.log(res);
         setResult(res);
         setLoading(false);
       } catch (error) {
-        console.log(error);
         setError(error);
         setLoading(false);
       }
-    })();
+    };
+    get();
   }, [url, options]);
 
   return { loading, result, error };

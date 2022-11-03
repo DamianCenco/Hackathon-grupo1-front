@@ -28,7 +28,7 @@ function BrandNav() {
   return (
     <Navbar.Brand>
       <Logo />
-      <h2>La casa de los helados</h2>
+      <h2>MiSuper</h2>
     </Navbar.Brand>
   );
 }

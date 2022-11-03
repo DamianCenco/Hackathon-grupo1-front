@@ -70,7 +70,6 @@ const Cart = (props) => {
       return total;
     }
   };
-  console.log(cartLength);
   return (
     <>
       <Button onClick={openCart} variant="link" className="cart">

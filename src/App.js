@@ -6,8 +6,8 @@ import { STORAGE_PRODUCTS_CART, urlApiProducts } from "./utils/constants";
 import { ToastContainer, toast } from "react-toastify";
 
 function App() {
-  const products = useAxios(urlApiProducts);
   const [productsCart, setProductsCart] = useState([]);
+  const products = useAxios(urlApiProducts);
 
   useEffect(() => {
     getProductsCart();

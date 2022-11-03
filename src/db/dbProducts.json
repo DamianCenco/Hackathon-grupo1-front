@@ -1,58 +1,114 @@
 [
     {
-        "id": 1,
-        "name": "Helado sándwich de nata",
-        "image": "img/sandwich-nata.jpg",
-        "extraInfo": "Caja 6 ud. (600 ml",
-        "price": 1.2
+        "id": "1",
+        "nombre": "Milanesas 500grs",
+        "precio": 180,
+        "stock": 10,
+        "categoria": "carne",
+        "imagen": "https://geant.vteximg.com.br/arquivos/ids/227635-1000-1000/301241-1.jpg?v=636830829403100000"
     },
     {
-        "id": 2,
-        "name": "Helado cucurucho de vainilla",
-        "image": "img/cucuruchos-vainilla.jpg",
-        "extraInfo": "Caja 6 ud. (720 ml",
-        "price": 1.55
+        "id": "2",
+        "nombre": "Papas",
+        "precio": 20,
+        "stock": 150,
+        "categoria": "verduras",
+        "imagen": "https://www.la99.com/wp-content/uploads/2022/06/as-papas.jpeg"
     },
     {
-        "id": 3,
-        "name": "Mini surtido",
-        "image": "img/mini-surtido.jpg",
-        "extraInfo": "Caja 6 ud. (720 ml)",
-        "price": 1.55
+        "id": "3",
+        "nombre": "Pan rallado 400grs",
+        "precio": 145,
+        "stock": 30,
+        "categoria": "harinas",
+        "imagen": "https://images-ti-vm1.tiendainglesa.com.uy/medium/P447627-1.jpg?20200203133814,Pan-Rallado-con-Condimento-Rebozador-EL-TRIGAL-450-gr-en-Tienda-Inglesa"
     },
     {
-        "id": 4,
-        "name": "Helado mini doble sándwich nata",
-        "image": "img/sandwich-doble.jpg",
-        "extraInfo": "Caja 6 ud. (480 ml)",
-        "price": 1.99
+        "id": "4",
+        "nombre": "Pack 6 huevos",
+        "precio": 130,
+        "stock": 23,
+        "categoria": "desayuno",
+        "imagen": "https://arcordiezb2c.vteximg.com.br/arquivos/ids/160658-500-400/Huevos-Color-Corave-6-Un-1-631.jpg?v=637450402935530000"
     },
     {
-        "id": 5,
-        "name": "Helado de fresa",
-        "image": "img/fresa-hielo.jpg",
-        "extraInfo": "Caja 10 ud. (750 ml)",
-        "price": 1.65
+        "id": "5",
+        "nombre": "Harina 1kg",
+        "precio": 70,
+        "stock": 10,
+        "categoria": "harinas",
+        "imagen": "https://tatauy.vteximg.com.br/arquivos/ids/157374-1000-1000/HARINA-0000-CANUELAS-1-KG-1-3378.jpg?v=636865001760200000"
     },
     {
-        "id": 6,
-        "name": "Helado yogoice Mr. Toddy",
-        "image": "img/yogoice.jpg",
-        "extraInfo": "Caja 8 ud. (450 ml)",
-        "price": 1.7
+        "id": "6",
+        "nombre": "Polvo para hornear",
+        "precio": 30,
+        "stock": 13,
+        "categoria": "harinas",
+        "imagen": "https://geant.vteximg.com.br/arquivos/ids/284870-1000-1000/752790.jpg?v=637680093294830000"
     },
     {
-        "id": 7,
-        "name": "Helado sabor huevo de chocolate",
-        "image": "img/huevo.jpg",
-        "extraInfo": "Tarrina 1 L.",
-        "price": 2.55
+        "id": "7",
+        "nombre": "Cubito Knor",
+        "precio": 50,
+        "stock": 42,
+        "categoria": "condimentos",
+        "imagen": "https://tucentralonline.com/Montalban-25/wp-content/uploads/sites/13/2021/12/100803020.jpg"
     },
     {
-        "id": 8,
-        "name": "Medios cocos helados",
-        "image": "img/medio-coco-helado.jpg",
-        "extraInfo": "Caja 2 ud. (350 ml)",
-        "price": 2.05
+        "id": "8",
+        "nombre": "Aceite 1L",
+        "precio": 100,
+        "stock": 9,
+        "categoria": "aceites",
+        "imagen": "https://geant.vteximg.com.br/arquivos/ids/282186-700-700/502002.jpg?v=637656900819030000"
+    },
+    {
+        "id": "9",
+        "nombre": "Salsa de tomate 1L",
+        "precio": 80,
+        "stock": 7,
+        "categoria": "salsas",
+        "imagen": "https://geant.vteximg.com.br/arquivos/ids/203321-1000-1000/704196-1.jpg?v=636378746922100000"
+    },
+    {
+        "id": "10",
+        "nombre": "Lata de atun 250gr",
+        "precio": 35,
+        "stock": 24,
+        "categoria": "carnes",
+        "imagen": "https://geant.vteximg.com.br/arquivos/ids/274365-1000-1000/710348.jpg?v=637583330315470000"
+    },
+    {
+        "id": "11",
+        "nombre": "Unidad Morron",
+        "precio": 50,
+        "stock": 10,
+        "categoria": "verduras",
+        "imagen": "https://geant.vteximg.com.br/arquivos/ids/226358-1000-1000/410003.jpg?v=636802226734900000"
+    },
+    {
+        "id": "12",
+        "nombre": "Carne Picada 500gr",
+        "precio": 130,
+        "stock": 10,
+        "categoria": "carnes",
+        "imagen": "https://f.fcdn.app/imgs/220eea/www.distribuidoradelacosta.com.uy/dicouy/2baf/original/catalogo/310031001/1920-1200/carne-picada-especial-kg-carne-picada-especial-kg.jpg"
+    },
+    {
+        "id": "13",
+        "nombre": "Cebolla kg",
+        "precio": 50,
+        "stock": 10,
+        "categoria": "Verduras",
+        "imagen": "https://static4.depositphotos.com/1020804/364/i/450/depositphotos_3649927-stock-photo-fresh-bulbs-of-onion.jpg"
+    },
+    {
+        "id": "14",
+        "nombre": "Queso muzarella kg",
+        "precio": 70,
+        "stock": 10,
+        "categoria": "Lacteos",
+        "imagen": "https://d2j6dbq0eux0bg.cloudfront.net/images/62202228/2355304352.jpg"
     }
 ]
