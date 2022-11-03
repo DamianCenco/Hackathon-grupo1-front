@@ -1,9 +1,12 @@
 .product {
   padding: 0;
+  display: flex;
+  justify-content: center;
+
 
   .card {
     margin: 19px;
-
+    width: 250px;
     .card-title {
       height: 50px;
     }

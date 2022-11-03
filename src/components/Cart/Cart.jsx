@@ -125,29 +125,26 @@ function CartContentHeader(props) {
 function CartContentProduct(props) {
   const {
     productId,
-    products: { loading, result },
+    products,
     productsCart,
     increaseQuantity,
     decreaseQuantity,
   } = props;
 
-  if (!loading && result) {
-    // eslint-disable-next-line
-    return result.data.map((product, index) => {
-      if (parseInt(productId) === product.id) {
-        const quantity = countDuplicatesItemArray(product.id, productsCart);
-        return (
-          <RenderProduct
-            key={index}
-            product={product}
-            quantity={quantity}
-            increaseQuantity={increaseQuantity}
-            decreaseQuantity={decreaseQuantity}
-          />
-        );
-      }
-    });
-  }
+  return products.map((product, index) => {
+    if (parseInt(productId) === product.id) {
+      const quantity = countDuplicatesItemArray(product.id, productsCart);
+      return (
+        <RenderProduct
+          key={index}
+          product={product}
+          quantity={quantity}
+          increaseQuantity={increaseQuantity}
+          decreaseQuantity={decreaseQuantity}
+        />
+      );
+    }
+  });
 }
 
 function RenderProduct(props) {

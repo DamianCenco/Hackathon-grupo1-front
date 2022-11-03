@@ -36,11 +36,11 @@ const Products = ({
   };
 
   return (
-    <Container>
+    <Container className="product__container">
       <input
         type="text"
         name="buscador"
-        placeholder="BUSCATE ALGO"
+        placeholder="Buscar producto..."
         value={searchWord}
         onChange={handleInputChange}
       ></input>
