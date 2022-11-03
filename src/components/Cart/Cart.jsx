@@ -59,7 +59,7 @@ const Cart = (props) => {
 
   const calculateTotalPrice = () => {
     if (!products.loading || products.result) {
-      const total = products.result.data
+      const total = products
         .filter((product) => {
           return productsCart.includes(product.id.toString());
         })
@@ -70,7 +70,7 @@ const Cart = (props) => {
       return total;
     }
   };
-  console.log(cartLength);
+
   return (
     <>
       <Button onClick={openCart} variant="link" className="cart">
