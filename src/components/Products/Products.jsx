@@ -3,6 +3,7 @@ import { Container, Row } from "react-bootstrap";
 import { getProducts } from "../../services/apiServices";
 import Loading from "../Loading/Loading";
 import Product from "../Product/Product";
+import products from "../../db/dbProducts.json";
 import "./Products.scss";
 
 const Products = ({
@@ -35,7 +36,10 @@ const Products = ({
     setSearchWord(target.value);
   };
 
+  console.log(loading);
+
   return (
+
     <Container className="product__container">
       <input
         type="text"
@@ -46,6 +50,7 @@ const Products = ({
       ></input>
       <Row>
         {!products.length ? (
+
           <Loading />
         ) : (
           products.map((product) => (

@@ -7,8 +7,9 @@ import { ToastContainer, toast } from "react-toastify";
 import { getProducts } from "./services/apiServices";
 
 function App() {
-  // const products = useAxios(urlApiProducts);
+
   const [productsCart, setProductsCart] = useState([]);
+  const products = useAxios(urlApiProducts);
 
   useEffect(() => {
     getProductsCart();
